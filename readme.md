@@ -30,6 +30,8 @@ To ensure the project runs cleanly on your machine (Windows, Mac, or Linux), it 
 
 # 2. Create a virtual environment:
 
+```bash
+
 On Windows: python -m venv venv
 
 On Mac/Linux: python3 -m venv venv
