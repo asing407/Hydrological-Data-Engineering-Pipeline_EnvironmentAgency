@@ -24,9 +24,10 @@ To ensure the project runs cleanly on your machine (Windows, Mac, or Linux), it 
 
 1. **Clone the repository (or extract the zip file) and navigate into the folder:**
    ```bash
-   cd DataEngineerJob
+   cd Hydrological-Data-Engineering-Pipeline_EnvironmentAgency
 
 # 2. Create a virtual environment:
+
 
 On Windows: python -m venv venv
 
@@ -41,7 +42,6 @@ On Mac/Linux: source venv/bin/activate
 # 4. Install the required dependencies:
 
 pip install -r requirements.txt
-
 
 # run pipeline
 
