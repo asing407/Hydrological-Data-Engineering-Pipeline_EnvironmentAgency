@@ -12,7 +12,7 @@ def create_tables(conn):
 
     cursor = conn.cursor()
 
-    # ---------- Stations Dimension ----------
+    # ---------- Stations table (dimensions)----------
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS stations (
         station_id TEXT PRIMARY KEY,
@@ -23,7 +23,7 @@ def create_tables(conn):
     )
     """)
 
-    # ---------- Measurements Fact ----------
+    # ---------- Measurements table (fact) ----------
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS measurements (
         id INTEGER PRIMARY KEY AUTOINCREMENT,

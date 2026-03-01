@@ -40,9 +40,8 @@ def test_database_operations():
     # 4. Test Idempotency (Inserting same record shouldn't duplicate)
     load_measurements(test_db, mock_measurements)
     cur.execute("SELECT COUNT(*) FROM measurements WHERE station_id = 'TEST_01'")
-    assert cur.fetchone()[0] == 1 # Count should still be 1 due to UNIQUE constraint
+    assert cur.fetchone()[0] == 1 
     
-    # Cleanup
     conn.close()
     if os.path.exists(test_db):
         os.remove(test_db)

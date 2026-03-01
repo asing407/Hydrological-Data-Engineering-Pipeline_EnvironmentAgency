@@ -1,5 +1,5 @@
 def process_station(station_raw: dict, station_id: str) -> dict:
-    """Transforms raw station JSON into a clean dictionary."""
+    """transforming raw station JSON into a clean dictionary."""
     return {
         "station_id": station_id,
         "name": station_raw.get("label", "Unknown"),
@@ -9,8 +9,10 @@ def process_station(station_raw: dict, station_id: str) -> dict:
     }
 
 def filter_target_measures(measures_raw: list, target_keywords: list) -> list:
-    """Filters the list of all measures down to our specific target parameters."""
+    
     target_measures = []
+    
+    
     for m in measures_raw:
         param_name = m.get("parameterName", "")
         if isinstance(param_name, dict):
@@ -20,7 +22,7 @@ def filter_target_measures(measures_raw: list, target_keywords: list) -> list:
         unit = m.get("unitName", "Unknown")
         
         if any(keyword in param_name_lower for keyword in target_keywords):
-            # Combine the parameter name and unit so the database treats them as distinct!
+            
             distinct_parameter_name = f"{param_name} ({unit})"
             
             target_measures.append({
@@ -31,8 +33,10 @@ def filter_target_measures(measures_raw: list, target_keywords: list) -> list:
     return target_measures
 
 def process_readings(readings_raw: list, station_id: str, parameter: str, unit: str) -> list:
-    """Transforms raw readings JSON into a list of clean dictionaries."""
+    """transforms raw readings JSON into a list of clean dictionaries."""
     clean_readings = []
+    
+    
     for r in readings_raw:
         clean_readings.append({
             "station_id": station_id,

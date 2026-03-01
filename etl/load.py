@@ -1,7 +1,7 @@
 import sqlite3
 
 def init_db(db_path: str):
-    """Initializes the SQLite database with a simple star schema."""
+    
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
     
@@ -33,7 +33,7 @@ def init_db(db_path: str):
     conn.close()
 
 def load_station(db_path: str, station: dict):
-    """Upserts station data into the dimension table."""
+    
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
     cur.execute("""
@@ -44,7 +44,7 @@ def load_station(db_path: str, station: dict):
     conn.close()
 
 def load_measurements(db_path: str, measurements: list):
-    """Inserts measurements into the fact table, ignoring duplicates."""
+    
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
     for m in measurements:

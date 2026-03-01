@@ -20,7 +20,7 @@ def get_station_measures(station_id: str) -> list:
 
 def get_measure_readings(measure_url: str, limit: int = 10) -> list:
     """Fetches the N most recent readings for a specific measure."""
-    # Changed from &_sorted to &_sort=-date
+    # changed from &_sorted to &_sort=-date
     start_date = (datetime.datetime.now() - datetime.timedelta(days=30)).strftime('%Y-%m-%d')
     url = f"{measure_url}/readings.json?mineq-date={start_date}&_sort=-date&_limit={limit}"
     response = requests.get(url)

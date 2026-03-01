@@ -12,7 +12,7 @@ def view_data():
     print(stations_df.to_markdown(index=False))
     
     print("\n--- RECENT MEASUREMENTS (FACT TABLE) ---")
-    # Let's just look at the 10 most recent measurements
+    # the 10 most recent measurements
     measurements_df = pd.read_sql_query("SELECT * FROM measurements ORDER BY timestamp DESC LIMIT 10", conn)
     print(measurements_df.to_markdown(index=False))
 
