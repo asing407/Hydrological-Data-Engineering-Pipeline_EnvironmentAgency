@@ -22,8 +22,6 @@ The pipeline is designed to be **idempotent**, meaning it can be run multiple ti
 ## Installation & Setup
 To ensure the project runs cleanly on your machine (Windows, Mac, or Linux), it is recommended to use a virtual environment.
 
-
-
 1. **Clone the repository (or extract the zip file) and navigate into the folder:**
    ```bash
    cd DataEngineerJob
